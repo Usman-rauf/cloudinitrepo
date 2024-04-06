@@ -25,19 +25,10 @@ usermod -aG docker codeagency
 systemctl enable docker
 systemctl start docker
 apt-get install -y docker-compose
-
-# Create MOTD message
 echo "Welcome to the server! This is a custom MOTD message." > /etc/motd
-
-# Install base tools
 apt-get install -y build-essential wget curl git
-
-# Install brew
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install dust
 cargo install du-dust
+sudo apt install ctop
 
-# Install ctop
-wget https://github.com/bcicen/ctop/releases/download/v0.7.6/ctop-0.7.6-linux-amd64 -O /usr/local/bin/ctop
-chmod +x /usr/local/bin/ctop
+
